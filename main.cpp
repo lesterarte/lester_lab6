@@ -25,6 +25,7 @@ int main(int argc, char*argv[])
 
 		if(op == 1)
 		{
+
 			cin.ignore();
 			cout<<"Ingrese el nombre del Usuario "; 
 			getline(cin,usuario);
@@ -41,7 +42,7 @@ int main(int argc, char*argv[])
 
 			if(cont != 0)
 			{
-				cout<<"No se puede agregar el usuario porque ya existe"<<endl; 
+				cout<<"\nNo se puede agregar el usuario porque ya existe"<<endl; 
 			}
 			else
 			{
@@ -49,6 +50,66 @@ int main(int argc, char*argv[])
 			}
 
 		}
+
+		if(op == 3)
+		{
+
+			cout<<"Ingrese el Usuario a Eliminar"; 
+			getline(cin,usuario);
+			for (int i = 0; i < users.size(); i++)
+			{
+				if (usuario.compare(users[i].getUsername()) == 0)
+				{
+					users.erase(users.begin()+i);
+					cont++; 
+					break;
+					
+				}
+				
+			}
+
+			if (cont == 0)
+			{
+				cout<<"\nNo se puede Eliminar porque el usuario no existe"<<endl;
+
+			}
+
+		}
+
+		if(op == 4)
+		{
+			int id,year;
+			string name,developers,genre; 
+			cout<<"Ingrese el nombre del usuario que quiere agregar  un juego ";
+			getline(cin,usuario);
+			for (int i = 0; i < users.size(); i++)
+			{
+				if (usuario.compare(users[i].getUsername()) == 0)
+				{
+					cout<<"Ingrese el id del juego a ingresar";
+					cin>>id;
+
+					if(users[i].addgame(id) == true)
+					{
+						cin.ignore();
+						cout<<"Ingrese el nombre del juego: ";
+						getline(cin,name);
+						cout<<"Ingrese los creadores: ";
+						getline(cin,developers);
+
+					}
+					
+				}
+				
+			}
+
+			if (cont == 0)
+			{
+				cout<<"\nNo se puede Eliminar porque el usuario no existe"<<endl;
+
+			}	
+		}
+
 
 
 

@@ -9,7 +9,7 @@ class usuarios{
 
 		string username; 
 		string password; 
-		vector<int> games; 
+		vector<int> juegos; 
 		
 public:
 		usuarios(string,string);
